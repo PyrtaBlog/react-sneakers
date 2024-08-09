@@ -7,6 +7,101 @@ body {
   background-color: #E7F6FF;
 }
 
+.drawer {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 2;
+  .drawer_cart {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    margin-right: 0;
+    padding: 0 30px;
+    .cart_title {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .close_cart {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .cart_info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .cart_total {
+      gap: 10px;
+      p {
+        margin: 0;
+      }
+      .hr {
+        border-bottom: 1px dashed #dfdfdf;
+        height: 2px;
+        flex: 1;
+        
+      }
+    }
+    .cart_ndfl {
+      gap: 10px;
+      p {
+        margin: 0;
+      }
+      .hr {
+        border-bottom: 1px dashed #dfdfdf;
+        height: 2px;
+        flex: 1;
+      }
+    }
+  }
+}
+.buyBtn {
+  position: relative;
+  width: 100%;
+  height: 55px;
+  border-radius: 18px;
+  background-color: #9DD458;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  .arrow {
+    position: absolute;
+    right: 35px;
+  }
+  &:hover {
+    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+    transform: scale(1.01);
+  }
+}
+.cart_list {
+  overflow: hidden;
+  div {
+    margin-bottom: 10px;
+  }
+}
+.cart_card {
+  height: 120px;
+  border: 1px solid #dfdfdf;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
 .wrapper {
   max-width: 1080px;
   margin: 0 auto;
@@ -56,11 +151,17 @@ main {
     gap: 40px;
   }
   .card {
-    width: 210px;
-    height: 260px;
+    max-width: 210px;
+    max-height: 260px;
     border: 1px solid #F3F3F3;
     border-radius: 40px;
     gap: 15px;
+    .favoriteBtn {
+      position: absolute;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
     .card_btnAdd {
       background-color: transparent;
       border: 1px solid #F2F2F2;
@@ -72,6 +173,16 @@ main {
       p:last-child {
         font-weight: bold;
       }
+    }
+    .addBtn {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    &:hover {
+      box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
+      transform: translateY(-5px);
     }
   }
 }
